@@ -1,4 +1,4 @@
-#Colorizing txt 
+#Colorizing depth imagestxt 
 #%%pip3 install opencv-python
 import cv2
 import numpy as np
@@ -8,13 +8,13 @@ import shutil
 # Source directory containing subdirectories with depth files
 src_directory = "/common/"  # Update this path
 out_root_directory = "/common/"  # Update this path
-#
+#This code will process a batch of images in the src_directory which is depth image file from Kinect V2 camera
 
 # Define the structuring element
 SE = cv2.getStructuringElement(cv2.MORPH_RECT, (2, 2))
 
 # Create a log file to track processed directories
-log_file_path = os.path.join(out_root_directory, 'processed_directories.txt')
+log_file_path = os.path.join(out_root_directory, 'processed_directories.txt') # to track the folders that is already done
 with open(log_file_path, 'w') as log_file:
     log_file.write("Processed Directories:\n")
 
@@ -41,7 +41,7 @@ for root, _, files in os.walk(src_directory):
             # Load depth data from file
             depth_data = np.loadtxt(os.path.join(root, filename), delimiter=',')
 
-            # Apply thresholding to focus on a specific depth range (optional)
+            # Aply thresholding to focus on a specific depth range (optional)
             depth_data[np.logical_or(depth_data < 1500, depth_data > 2700)] = 0
 
             # Apply thresholding to focus on a specific depth range
