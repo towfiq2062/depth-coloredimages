@@ -1,3 +1,7 @@
+Prepared by Md Towfiqur Rahman
+
+
+
 #Colorizing depth imagestxt 
 #%%pip3 install opencv-python
 import cv2
@@ -41,7 +45,7 @@ for root, _, files in os.walk(src_directory):
             # Load depth data from file
             depth_data = np.loadtxt(os.path.join(root, filename), delimiter=',')
 
-            # Aply thresholding to focus on a specific depth range (optional)
+            # Aply thresholding to focus on a specific depth range (This is an optional requirement. If you know the exact depth value range, please change this )
             depth_data[np.logical_or(depth_data < 1500, depth_data > 2700)] = 0
 
             # Apply thresholding to focus on a specific depth range
