@@ -9,3 +9,6 @@ The following code will work in the TensorFlow GPU 2.9 (python version 3.9.13) p
 Library requirement: OpenCV (Version 4.9.0), NumPy (Version 1.23.3), Pandas (Version 2.1.0), and Matplotlib (Version 3.5.3) 
 
 
+**Instruction**
+Make sure you have the above platform and requirements.
+For Batch Processing of Depth images. RUN the code.py file. Make sure to change the directory (INPUT and OUTPUT)
